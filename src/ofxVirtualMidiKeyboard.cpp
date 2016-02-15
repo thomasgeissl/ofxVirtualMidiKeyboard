@@ -65,7 +65,6 @@ void ofxVirtualMidiKeyboard::setMapping(int keys[])
     {
         _keyMapping[keys[i]] = 60+i;
     }
-
 }
 
 ofParameterGroup &ofxVirtualMidiKeyboard::getParameters()
@@ -92,7 +91,7 @@ void ofxVirtualMidiKeyboard::keyPressed(ofKeyEventArgs &arg)
     if(_keyMapping.find(arg.key) != _keyMapping.end())
     {
         int note = _keyMapping[arg.key] + 12*_octaveShiftParameter;
-        _midiOut.sendNoteOn(_channelParameter, note);
+        _midiOut.sendNoteOn(_channelParameter, note, _velocityParameter);
     }
 }
 
@@ -105,7 +104,7 @@ void ofxVirtualMidiKeyboard::keyReleased(ofKeyEventArgs &arg)
     if(_keyMapping.find(arg.key) != _keyMapping.end())
     {
         int note = _keyMapping[arg.key] + 12*_octaveShiftParameter;
-        _midiOut.sendNoteOff(_channelParameter, note);
+        _midiOut.sendNoteOff(_channelParameter, note, _velocityParameter);
     }
 }
 
