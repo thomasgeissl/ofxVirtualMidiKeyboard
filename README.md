@@ -8,9 +8,9 @@ ofxVirtualMidiKeyboard is a virtual midi keyboard. It converts key strokes into 
 
 Dependencies
 ---
-* ofxMidi
+* ofxMidi (https://github.com/danomatika/ofxMidi)
 
-TODO:
+TODO
 ---
 * Map keys automatically, based on the keyboard layout (check glfw)
 * Add mappings to shift octave, velocity?
