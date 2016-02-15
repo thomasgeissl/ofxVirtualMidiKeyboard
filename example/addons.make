@@ -1,0 +1,3 @@
+ofxMidi
+ofxVirtualMidiKeyboard
+ofxGui
