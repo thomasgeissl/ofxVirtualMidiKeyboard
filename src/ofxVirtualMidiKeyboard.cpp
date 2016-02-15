@@ -30,6 +30,22 @@ void ofxVirtualMidiKeyboard::setup(string name, int channel, int velocity, int o
     _mappingNoteParameter.set("Note", 0,0,11);
     _mappingParameters.add(_activeMappingParameter);
     _mappingParameters.add(_mappingNoteParameter);
+
+    int keys_qwerty[12];
+    keys_qwerty[0] = 97;
+    keys_qwerty[1] = 119;
+    keys_qwerty[2] = 115;
+    keys_qwerty[3] = 101;
+    keys_qwerty[4] = 100;
+    keys_qwerty[5] = 102;
+    keys_qwerty[6] = 116;
+    keys_qwerty[7] = 103;
+    keys_qwerty[8] = 121; //z 122
+    keys_qwerty[9] = 104;
+    keys_qwerty[10] = 117;
+    keys_qwerty[11] = 106;
+
+    setMapping(keys_qwerty);
 }
 
 void ofxVirtualMidiKeyboard::setActive(bool value)
@@ -47,7 +63,7 @@ void ofxVirtualMidiKeyboard::setMapping(int keys[])
     _keyMapping.clear();
     for(int i = 0; i < 12; i++)
     {
-        _keyMapping[keys[i], 60+i];
+        _keyMapping[keys[i]] = 60+i;
     }
 
 }
@@ -64,6 +80,7 @@ ofParameterGroup &ofxVirtualMidiKeyboard::getMappingParameters()
 
 void ofxVirtualMidiKeyboard::keyPressed(ofKeyEventArgs &arg)
 {
+    ofLogNotice("debug")<<arg.key;
     if(!_activeParameter)
     {
         if(_activeMappingParameter)
