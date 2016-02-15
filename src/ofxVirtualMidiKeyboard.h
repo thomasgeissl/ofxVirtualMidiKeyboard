@@ -10,7 +10,6 @@ public:
     void setup(string name = "ofxMidiVirtualKeyboard", int channel = 1, int velocity = 127, int octaveShift = 0);
     void setActive(bool value = true);
     void setMappingActive(bool value = true);
-
     void setMapping(int keys[12]);
     ofParameterGroup & getParameters();
     ofParameterGroup & getMappingParameters();
@@ -25,7 +24,6 @@ private:
 private:
     ofxMidiOut _midiOut;
     map<int, int> _keyMapping;
-
 
     ofParameterGroup _parameters;
     ofParameter<bool> _activeParameter;

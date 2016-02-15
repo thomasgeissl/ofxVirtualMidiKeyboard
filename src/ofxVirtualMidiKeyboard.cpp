@@ -79,7 +79,6 @@ ofParameterGroup &ofxVirtualMidiKeyboard::getMappingParameters()
 
 void ofxVirtualMidiKeyboard::keyPressed(ofKeyEventArgs &arg)
 {
-    ofLogNotice("debug")<<arg.key;
     if(!_activeParameter)
     {
         if(_activeMappingParameter)
