@@ -7,7 +7,7 @@ class ofxVirtualMidiKeyboard
 public:
     ~ofxVirtualMidiKeyboard();
 
-    void setup(string name = "ofxMidiVirtualKeyboard", int channel = 1, int velocity = 127, int octaveShift = 0);
+    void setup(string name = "ofxVirtualMidiKeyboard", int channel = 1, int velocity = 127, int octaveShift = 0);
     void setActive(bool value = true);
     void setMappingActive(bool value = true);
     void setMapping(int keys[12]);
